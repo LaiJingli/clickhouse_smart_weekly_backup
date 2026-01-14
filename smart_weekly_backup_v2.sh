@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# author by https://github.com/LaiJingli/clickhouse_smart_weekly_backup.git
 # ================= 配置区 =================
 LOG_FILE="/var/log/clickhouse-backup/backup_job.log"
 CB_TOOL="/usr/bin/clickhouse-backup"
@@ -71,7 +71,6 @@ echo "$OUTPUT"
 if [ $EXIT_CODE -eq 0 ]; then
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] ✅ Backup SUCCESS."
     
-    # ★★★ 修复点：删除了报错的手动清理命令 ★★★
     # 工具会根据 config.yml 自动清理，这里只需记录日志即可
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] ℹ️ Old backups will be cleaned automatically by config policy."
 
